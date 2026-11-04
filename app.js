@@ -45,7 +45,9 @@ window.addEventListener("keydown", function (e) {
     }
 
     console.log(avatar.style.left);
-  } else {
+  }
+  if (isTouching(avatar, coin)) {
+    moveCoin();
   }
 });
 const extractPos = (pos) => {
