@@ -16,13 +16,17 @@ window.addEventListener("keydown", function (e) {
   if (e.key === "ArrowDown" || e.key === "Down") {
     console.log(e.key);
     const currTop = extractPos(avatar.style.top);
-    avatar.style.top = `${currTop + 50}px`;
-    console.log(avatar.style.top);
+    if (currTop < window.innerHeight) {
+      avatar.style.top = `${currTop + 50}px`;
+      console.log(avatar.style.top);
+    }
   } else if (e.key === "ArrowUp" || e.key === "Up") {
     console.log(e.key);
     const currTop = extractPos(avatar.style.top);
-    avatar.style.top = `${currTop - 50}px`;
-    console.log(avatar.style.top);
+    if (currTop > 0) {
+      avatar.style.top = `${currTop - 50}px`;
+      console.log(avatar.style.top);
+    }
   } else if (e.key === "ArrowRight" || e.key === "Right") {
     avatar.style.transform = "scale(1,1)";
     console.log(e.key);
